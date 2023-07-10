@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int& RefRetFuncOne(int &ref)
+int RefRetFuncOne(int &ref)
 {
     ref++;
     return ref;
