@@ -14,13 +14,13 @@ namespace CAR_CONST
     };
 }
 
-class Car
+class Car // struct 대신 class를 삽입
 {
-private:
+private: // 아래 변수와 함수는 모두 클래스 내부(클래스 내에 정의된 함수)에서만 접근 가능
     char gamerID[CAR_CONST::ID_LEN]; 
     int fuelGauge; 
     int curSpeed; 
-public:
+public: // 아래 변수와 함수는 제한 없이 접근 가능
     void InitMembers(char * ID, int fuel);
     void ShowCarState();
     void Accel();
@@ -28,7 +28,7 @@ public:
 
 };
 
-void Car::InitMembers(char * ID, int fuel)
+void Car::InitMembers(char * ID, int fuel) // 동일 클래스 내에서 선언된 함수이기 때문에 private 변수에 접근 가능
 {
     strcpy(gamerID, ID);
     fuelGauge=fuel;
@@ -72,7 +72,7 @@ void Car::Break()
 int main(void)
 {
     Car run99;
-    run99.InitMembers("run99", 100);
+    run99.InitMembers("run99", 100); // public에서 선언된 함수이기 때문에 클래스 외부에서도 호출 가능
     run99.Accel();
     run99.Accel();
     run99.Accel();
