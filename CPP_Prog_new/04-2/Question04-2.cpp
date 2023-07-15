@@ -36,18 +36,6 @@ public:
         cirmid = pos;
         rad = r;
     }
-    int GetX() const
-    {
-        return cirmid.GetX();
-    }
-    int GetY() const
-    {
-        return cirmid.GetY();
-    }
-    int GetR() const
-    {
-        return rad;
-    }
     void ShowPointInfo() const
     {
         cout<<"radius : "<<rad<<endl;
