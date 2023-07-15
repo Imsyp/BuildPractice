@@ -27,7 +27,7 @@ public:
 int main(void)
 {
     Point pos1 = {-2, 4}; // 좌표의 범위가 0 아래로 내려갔다.
-    Point pos2 = {5, 9};  //직사각형을 만드려면 pos2의 y좌표값이 pos1의 y좌표값보다 작아야 한다.
+    Point pos2 = {5, 9};  //직사각형을 만드려면 좌상단의 x좌표값이 우상단의 x좌표값보다 작아야 한다.
     Rectangle rec = {pos2, pos1};
     rec.ShowRecInfo();
 
