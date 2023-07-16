@@ -37,3 +37,4 @@ int main(void)
     ptr2 ->ShowSimpleData(); // ptr2이 가리키는 객체의 ShowSimpleData 함수를 호출
     return 0;
 }
+
