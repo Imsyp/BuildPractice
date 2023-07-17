@@ -22,8 +22,8 @@ public:
 int main(void)
 {
     const SoSimple obj(7);
-    // obj.AddNum(20);
-    obj.ShowData();
+    // obj.AddNum(20); -> const 함수가 아니기 때문에 호출 불가능
+    obj.ShowData(); // const 함수이기 때문에 호출 가능
     
     return 0;
 }
