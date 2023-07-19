@@ -133,13 +133,15 @@ int main(void)
 
     // 임시직 등록
     TemporaryWorker * alba = new TemporaryWorker("Jung", 700);
-    alba -> AddWorkTime(5); // 5시간 일한 결과 등록
-    handler.AddEmployee(alba);
+    alba -> AddWorkTime(5); 
+    handler.AddEmployee(alba);  
+    // AddEmployee는 매개변수를 Employee형 포인터 변수로 선언하여 받지만, 가상함수이기 때문에 포인터가 가리키는 객체의 자료형에 영향을 받음.           
 
     // 영업직 등록
     SalesWorker * seller = new SalesWorker("Hong", 1000, 0.1);
-    seller->AddSalesResult(7000); // 영업실적 7000
+    seller->AddSalesResult(7000); 
     handler.AddEmployee(seller);
+    // AddEmployee는 매개변수를 Employee형 포인터 변수로 선언하여 받지만, 가상함수이기 때문에 포인터가 가리키는 객체의 자료형에 영향을 받음.
 
     // 이번 달에 지불해야 할 급여의 정보
     handler.ShowAllSalaryInfo();
