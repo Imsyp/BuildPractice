@@ -4,13 +4,13 @@ using namespace std;
 class BaseOne
 {
 public:
-    void SimpleFunc() { cout<<"BaseOne"<<endl; }
+    void SimpleFuncOne() { cout<<"BaseOne"<<endl; }
 };
 
 class BaseTwo
 {
 public:
-    void SimpleFunc() { cout<<"BaseTwo"<<endl; }
+    void SimpleFuncTwo() { cout<<"BaseTwo"<<endl; }
 };
 
 class MultiDerived : public BaseOne, protected BaseTwo
@@ -18,8 +18,8 @@ class MultiDerived : public BaseOne, protected BaseTwo
 public:
     void ComplexFunc()
     {
-        BaseOne::SimpleFunc();
-        BaseTwo::SimpleFunc();
+        SimpleFuncOne();
+        SimpleFuncTwo();
     }
 };
 
