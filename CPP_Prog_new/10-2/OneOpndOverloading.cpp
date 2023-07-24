@@ -31,9 +31,9 @@ Point& operator--(Point &ref)
 int main(void)
 {
     Point pos(1, 2);
-    ++pos;
+    ++pos;  //멤버함수 오버로딩, pos.operator++();
     pos.ShowPosition();
-    --pos;
+    --pos;  //전역함수 오버로딩, operator--(pos);
     pos.ShowPosition();
 
     ++(++pos);
