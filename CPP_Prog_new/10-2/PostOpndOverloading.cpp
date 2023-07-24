@@ -20,7 +20,7 @@ public:
     }
     const Point operator++(int) //후위증가
     {
-        const Point retobj(xpos, ypos);   //const Point retobj(*this);
+        const Point retobj(xpos, ypos);   //후위증가는 연산 전 값을 보존해야하기 때문에 const로 선언
         xpos +=1;
         ypos +=1;
         return retobj;
@@ -38,7 +38,7 @@ Point& operator--(Point &ref)   //전위감소
 
 const Point operator--(Point &ref, int)   //후위감소
 {
-    const Point retobj(ref);    //const 객체
+    const Point retobj(ref);    //후위감소는 연산 전 값을 보존해야하기 때문에 const로 선언
     ref.xpos-=1;
     ref.ypos-=1;
     return retobj;
