@@ -12,8 +12,8 @@ int main(void)
 {
     cout<< Add<int>(15, 20)<<endl;  //T를 int로 해서 만들어진 Add 함수 호출, int형 자료에 대한 함수는 이때만 만들어짐
     cout<< Add<double>(2.9, 3.7)<<endl; //T를 double로 해서 만들어진 Add 함수 호출, double형 자료에 대한 함수는 이때만 만들어짐
-    cout<< Add<int>(3.2, 3.2)<<endl;
-    cout<< Add<double>(3.14, 2.75)<<endl;
+    cout<< Add<int>(3.2, 3.2)<<endl;    //앞서 만들어놓은 int형 함수 호출
+    cout<< Add<double>(3.14, 2.75)<<endl;   //앞서 만들어놓은 double형 함수 호출
 
     return 0;
 }
