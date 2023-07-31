@@ -26,7 +26,7 @@ public:
 };
 
 
-/*
+
 template <class T1>
 class MySimple<T1, double>  //T2를 double로 부분 특수화
 {
@@ -38,7 +38,7 @@ public:
         cout<<"<T1, double>"<<endl;        
     }
 };
-*/
+
 
 int main(void)
 {
