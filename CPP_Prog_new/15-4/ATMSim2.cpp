@@ -44,7 +44,7 @@ public:
     {
         strcpy(accNum, acc);
     }
-    void Deposit(int money) throw (AccountException)
+    void Deposit(int money) throw (AccountException)    //상속에 의해 DepositionException 객체도 AccountException 객체로 간주
     {
         if(money<0)
         {
@@ -53,7 +53,7 @@ public:
         }
         balance+=money;
     }
-    void Withdraw(int money) throw (AccountException)
+    void Withdraw(int money) throw (AccountException)   //상속에 의해 WithdrawException 객체도 AccountException 객체로 간주
     {
         if(money>balance)
             throw WithdrawException(balance);
