@@ -17,7 +17,7 @@ int main(void)
     }
     catch(bad_alloc &bad)
     {
-        cout<<bad.what()<<endl;
+        cout<<bad.what()<<endl; //what 함수는 예외의 원인정보를 문자열의 형태로 반환
         cout<<"더 이상 할당 불가!"<<endl;
     }
     
