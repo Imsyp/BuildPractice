@@ -14,11 +14,11 @@ void ShowAddResult(int& n1, int& n2)
 int main(void)
 {
     const char * name="Lee Sung Ju";
-    ShowString(const_cast<char*>(name));
+    ShowString(const_cast<char*>(name));    //const char*형 데이터를 char*형으로 형 변환
 
     const int& num1=100;
     const int& num2=200;
-    ShowAddResult(const_cast<int&>(num1), const_cast<int&>(num2));
+    ShowAddResult(const_cast<int&>(num1), const_cast<int&>(num2));  //const int&형 데이터를 int&형으로 형 변환
 
     return 0;
 }
