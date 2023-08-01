@@ -11,7 +11,7 @@ int main(void)
     {
         SimpleFuncOne();
     }
-    catch(int expn)
+    catch(char expn)
     {
         cout<<"예외코드: "<<expn<<endl;
     }
