@@ -2,10 +2,16 @@
 #include <cstring>
 using namespace std;
 
-class DepositException
+class AccountException
+{
+public:
+    virtual void ShowExceptionReason()=0;   //순수 가상함수
+};
+
+class DepositException : public AccountException
 {
 private:
-    int reqDep; //요청 입금액
+    int reqDep; 
 public:
     DepositException(int money) : reqDep(money)
     { }
@@ -15,10 +21,10 @@ public:
     }
 };
 
-class WithdrawException
+class WithdrawException : public AccountException
 {
 private:
-    int balance;    //잔고
+    int balance;    
 public:
     WithdrawException(int money) : balance(money)
     { }
@@ -31,14 +37,14 @@ public:
 class Account
 {
 private:
-    char accNum[50];    //계좌번호
-    int balance;    //잔고
+    char accNum[50];    
+    int balance;    
 public:
     Account(char * acc, int money) : balance(money)
     {
         strcpy(accNum, acc);
     }
-    void Deposit(int money) throw (DepositException)
+    void Deposit(int money) throw (AccountException)
     {
         if(money<0)
         {
@@ -47,7 +53,7 @@ public:
         }
         balance+=money;
     }
-    void Withdraw(int money) throw (WithdrawException)
+    void Withdraw(int money) throw (AccountException)
     {
         if(money>balance)
             throw WithdrawException(balance);
@@ -68,7 +74,7 @@ int main(void)
         myAcc.Deposit(2000);
         myAcc.Deposit(-300);
     }
-    catch(DepositException &expn)   //굳이 예외객체를 복사할 필요가 없기 때문에 참조자 선언
+    catch(AccountException &expn)  
     {
         expn.ShowExceptionReason();
     }
@@ -79,7 +85,7 @@ int main(void)
         myAcc.Withdraw(3500);
         myAcc.Withdraw(4500);
     }
-    catch(WithdrawException &expn)  //굳이 예외객체를 복사할 필요가 없기 때문에 참조자 선언
+    catch(AccountException &expn)  
     {
         expn.ShowExceptionReason();
     }
