@@ -3,7 +3,7 @@
 #include <cmath>
 using namespace std;
 
-int StoI(char * str)
+int StoI(char * str)    //문자열을 정수로 변환하는 함수
 {
     int len=strlen(str);
     int num=0;
